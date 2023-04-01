@@ -17,6 +17,13 @@ export interface BlogPostDto {
   title: string;
 }
 
+export type BlogPostMetaDto = {
+  date: string;
+  slug: string;
+  status: BlogPostStatusType;
+  title: string;
+};
+
 export interface PendingUserModificationDto {
   committed_at?: string;
   created_at: string;

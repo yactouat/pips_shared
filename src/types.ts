@@ -6,13 +6,6 @@ export type APIResponseType = {
   data: {}[] | {} | null;
 };
 
-export type BlogPostMetaType = {
-  date: string;
-  slug: string;
-  status: BlogPostStatusType;
-  title: string;
-};
-
 export type BlogPostStatusType = "published" | "draft";
 
 export type BuildStateType = "ERROR" | "READY" | "MASKED";
