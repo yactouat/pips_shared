@@ -1,5 +1,5 @@
 import {
-  BlogPostResourceStatusType,
+  BlogPostStatusType,
   PendingUserModificationType,
   SocialHandleType,
   TokenType,
@@ -13,7 +13,7 @@ export interface BlogPostDto {
   contents: string;
   date: string;
   slug: string;
-  status: BlogPostResourceStatusType;
+  status: BlogPostStatusType;
   title: string;
 }
 

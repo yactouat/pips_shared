@@ -6,16 +6,16 @@ export type APIResponseType = {
   data: {}[] | {} | null;
 };
 
-export type BlogPostResourceMetaType = {
+export type BlogPostMetaType = {
   date: string;
   slug: string;
-  status: BlogPostResourceStatusType;
+  status: BlogPostStatusType;
   title: string;
 };
 
-export type BlogPostResourceStatusType = "published" | "draft";
+export type BlogPostStatusType = "published" | "draft";
 
-export type BuildResourceStateType = "ERROR" | "READY" | "MASKED";
+export type BuildStateType = "ERROR" | "READY" | "MASKED";
 
 export class MigrationType {
   constructor(
@@ -85,7 +85,7 @@ export type VercelDeploymentType = {
   };
   name: string;
   ready: number;
-  state: BuildResourceStateType;
+  state: BuildStateType;
   type: string;
   uid: string;
   url: string;
