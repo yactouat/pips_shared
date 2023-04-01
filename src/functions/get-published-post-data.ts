@@ -1,7 +1,7 @@
 import axios from "axios";
 import { BlogPostDto } from "../dtos";
 
-const getPostData = async (slug: string): Promise<BlogPostDto> => {
+const getPublishedPostData = async (slug: string): Promise<BlogPostDto> => {
   const baseUrl =
     process.env.NODE_ENV === "development"
       ? "http://localhost:8080"
@@ -13,4 +13,4 @@ const getPostData = async (slug: string): Promise<BlogPostDto> => {
   return postData;
 };
 
-export default getPostData;
+export default getPublishedPostData;
