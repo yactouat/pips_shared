@@ -1,13 +1,10 @@
 import axios from "axios";
+import { BASE_URL } from "../constants";
 import { BlogPostDto } from "../dtos";
 
 const getPublishedPostData = async (slug: string): Promise<BlogPostDto> => {
-  const baseUrl =
-    process.env.NODE_ENV === "development"
-      ? "http://localhost:8080"
-      : "https://api.yactouat.com";
   const postDataAPICall = await axios.get(
-    `${baseUrl}/blog-posts/published/${slug}`
+    `${BASE_URL}blog-posts/published/${slug}`
   );
   const postData = postDataAPICall.data.data;
   return postData;
