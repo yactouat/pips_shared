@@ -1,0 +1,29 @@
+{
+  "name": "pips_shared",
+  "version": "1.0.0",
+  "description": "the TS npm package that centralizes all the shared types, DTOs, and functions for the PIPS project",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "pips"
+  ],
+  "author": "Yacine Touati <yacine.touati.pro@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yactouat/pips_shared"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.16",
+    "@types/node": "^18.11.18",
+    "@types/pg": "^8.6.6",
+    "dotenv": "^16.0.3",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "jwt-decode": "^3.1.2",
+    "pg": "^8.9.0"
+  }
+}
