@@ -1,5 +1,6 @@
-import { Client } from "pg";
-import fs from "fs";
+// supported actions on resources
+export type ActionType = "See" | "Update";
+export type ResourceType = "Blog_Posts_Drafts" | "Users_Permissions";
 
 export type APIResponseType = {
   msg: string;
@@ -9,24 +10,6 @@ export type APIResponseType = {
 export type BlogPostStatusType = "published" | "draft";
 
 export type BuildStateType = "ERROR" | "READY" | "MASKED";
-
-export class MigrationType {
-  constructor(
-    private readonly sqlFileName: string,
-    private readonly pgClient: Client
-  ) {}
-
-  async up(): Promise<boolean> {
-    let query = fs.readFileSync(`sql/${this.sqlFileName}`, "utf8");
-    try {
-      await this.pgClient.query(query);
-    } catch (error) {
-      console.error(error);
-      return false;
-    }
-    return true;
-  }
-}
 
 export type PendingUserModificationType = "email" | "password";
 
