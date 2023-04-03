@@ -1,6 +1,8 @@
 import {
+  ActionType,
   BlogPostStatusType,
   PendingUserModificationType,
+  ResourceType,
   SocialHandleType,
   TokenType,
 } from "./types";
@@ -30,6 +32,12 @@ export interface PendingUserModificationDto {
   id: number;
   field: PendingUserModificationType;
   value: string;
+}
+
+export interface PermissionDto {
+  action: ActionType;
+  id: number;
+  resource: ResourceType;
 }
 
 export interface TokenDto {
