@@ -1,6 +1,16 @@
 // supported actions on resources
-export type ActionType = "See" | "Update";
-export type ResourceType = "Blog_Posts_Drafts" | "Users_Permissions";
+export type ActionType =
+  | "Create"
+  | "Delete"
+  | "Delete_Own"
+  | "Read"
+  | "Read_Own"
+  | "Update"
+  | "Update_Own";
+export type ResourceType =
+  | "Blog_Posts"
+  | "Blog_Posts_Drafts"
+  | "Users_Permissions";
 
 export type APIResponseType = {
   msg: string;
