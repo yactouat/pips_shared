@@ -36,7 +36,7 @@ export interface PendingUserModificationDto {
 
 export interface PermissionDto {
   action: ActionType;
-  id: number;
+  id?: number;
   resource: ResourceType;
 }
 
