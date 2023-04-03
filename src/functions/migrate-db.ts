@@ -1,7 +1,7 @@
 import fs from "fs";
+import Migration from "../Migration";
 
 import getPgClient from "./get-pg-client";
-import { MigrationType } from "./../types";
 
 const migrateDb = async () => {
   // scan `migrations` folder
@@ -11,7 +11,7 @@ const migrateDb = async () => {
   // run each migration in ascending order
   for (let i = 0; i < fs.readdirSync("sql").length; i++) {
     if (sqlScripts[i].endsWith(".sql")) {
-      await new MigrationType(sqlScripts[i], pgClient).up();
+      await new Migration(sqlScripts[i], pgClient).up();
     }
   }
   pgClient.end();
