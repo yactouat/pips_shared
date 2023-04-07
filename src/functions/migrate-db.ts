@@ -1,3 +1,4 @@
+import { execSync } from "child_process";
 import fs from "fs";
 import Migration from "../Migration";
 
@@ -9,9 +10,10 @@ const migrateDb = async () => {
   const pgClient = getPgClient();
   pgClient.connect();
   // run each migration in ascending order
-  for (let i = 0; i < fs.readdirSync("sql").length; i++) {
+  for (let i = 0; i < sqlScripts.sort().length; i++) {
     if (sqlScripts[i].endsWith(".sql")) {
       await new Migration(sqlScripts[i], pgClient).up();
+      execSync(`sleep 1`);
     }
   }
   pgClient.end();
