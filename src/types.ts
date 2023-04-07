@@ -10,6 +10,7 @@ export type ActionType =
 export type ResourceType =
   | "Blog_Posts"
   | "Blog_Posts_Drafts"
+  | "Images"
   | "Users_Permissions";
 
 export type APIResponseType = {
