@@ -21,6 +21,7 @@ export interface BlogPostDto {
 
 export type BlogPostMetaDto = {
   date: string;
+  initialStatus?: BlogPostStatusType;
   slug: string;
   status: BlogPostStatusType;
   title: string;
