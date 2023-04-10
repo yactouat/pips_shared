@@ -6,7 +6,22 @@ on:
     types: [created]
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Jest tests
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+      - name: test with jest
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: npm ci
+      - run: npm run test
+
   cd:
+    needs: test
     runs-on: ubuntu-latest
     name: publish to NPM
     steps:
