@@ -22,6 +22,8 @@ export type BlogPostStatusType = "published" | "draft";
 
 export type BuildStateType = "ERROR" | "READY" | "MASKED";
 
+export type LogLevelType = "DEBUG" | "INFO" | "WARNING" | "ERROR" | "CRITICAL";
+
 export type PendingUserModificationType = "email" | "password";
 
 export type PgClientConfigType = {
@@ -34,6 +36,13 @@ export type PgClientConfigType = {
 };
 
 export type SocialHandleType = "GitHub" | "LinkedIn";
+
+export type StructuredLogMessageType = {
+  level: LogLevelType;
+  msg: string;
+  serializedData: string | null;
+  service: string;
+};
 
 export type TokenType =
   | "User_Authentication"
