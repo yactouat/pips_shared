@@ -1,4 +1,4 @@
-export const getParsableReqBody = (reqBody: any): string | null => {
+const getParsableReqBody = (reqBody: any): string | null => {
   try {
     const parsed = JSON.stringify(reqBody);
     return parsed;
@@ -6,3 +6,5 @@ export const getParsableReqBody = (reqBody: any): string | null => {
     return null;
   }
 };
+
+export default getParsableReqBody;

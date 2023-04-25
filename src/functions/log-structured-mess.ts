@@ -1,6 +1,6 @@
 import { LogLevelType, StructuredLogMessageType } from "../types";
 
-export const logStructuredMess = (
+const logStructuredMess = (
   level: LogLevelType,
   msg: string,
   serializedData: string | null,
@@ -32,3 +32,5 @@ export const logStructuredMess = (
       break;
   }
 };
+
+export default logStructuredMess;
