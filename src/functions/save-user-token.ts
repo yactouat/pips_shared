@@ -3,6 +3,9 @@ import getUserFromDbWithEmail from "./get-user-from-db-with-email";
 import runPgQuery from "./run-pg-query";
 import { TokenDto } from "./../dtos";
 import { TokenType } from "./../types";
+import logStructuredMess from "./log-structured-mess";
+import getParsableReqBody from "./get-parsable-req-body";
+import { PACKAGE_NAME } from "../constants";
 
 const saveUserToken = async (
   userEmail: string,
@@ -36,7 +39,12 @@ const saveUserToken = async (
       createdToken = newToken.token;
     }
   } catch (error) {
-    console.error(error);
+    logStructuredMess(
+      "ERROR",
+      "saveUserToken error",
+      getParsableReqBody({ error, tokenType, userEmail }),
+      PACKAGE_NAME
+    );
   }
   return createdToken;
 };

@@ -1,3 +1,6 @@
+import { PACKAGE_NAME } from "../constants";
+import getParsableReqBody from "./get-parsable-req-body";
+import logStructuredMess from "./log-structured-mess";
 import runPgQuery from "./run-pg-query";
 
 const linkTokenToUserMod = async (
@@ -15,7 +18,12 @@ const linkTokenToUserMod = async (
     );
     tokenHasBeenLinked = true;
   } catch (error) {
-    console.error(error);
+    logStructuredMess(
+      "ERROR",
+      "linkTokenToUserMod error",
+      getParsableReqBody({ error, userModId, userToken }),
+      PACKAGE_NAME
+    );
   }
   return tokenHasBeenLinked;
 };

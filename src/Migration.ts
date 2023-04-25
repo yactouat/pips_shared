@@ -1,5 +1,8 @@
 import { Client } from "pg";
 import fs from "fs";
+import logStructuredMess from "./functions/log-structured-mess";
+import getParsableReqBody from "./functions/get-parsable-req-body";
+import { PACKAGE_NAME } from "./constants";
 
 export default class Migration {
   constructor(
@@ -12,7 +15,12 @@ export default class Migration {
     try {
       await this.pgClient.query(query);
     } catch (error) {
-      console.error(error);
+      logStructuredMess(
+        "ERROR",
+        "Migration up error",
+        getParsableReqBody({ error, query, sqlFileName: this.sqlFileName }),
+        PACKAGE_NAME
+      );
       return false;
     }
     return true;
