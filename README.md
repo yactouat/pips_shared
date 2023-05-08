@@ -6,6 +6,7 @@
   - [what is this ?](#what-is-this-)
   - [pre requisites](#pre-requisites)
   - [CI/CD](#cicd)
+  - [Code Viz](#code-viz)
 
 <!-- /TOC -->
 
@@ -25,3 +26,7 @@ building with tsc and publishing to NPM are automated using the Github Actions l
 required repository secrets are:
 
 -`NPM_ACCESS_TOKEN` : the access token to the NPM account that will be used to publish the package
+
+## Code Viz
+
+<https://mango-dune-07a8b7110.1.azurestaticapps.net/?repo=yactouat%2Fpips_shared>
