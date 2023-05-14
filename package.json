@@ -4,7 +4,7 @@
   "description": "the TS npm package that centralizes all the shared types, DTOs, and functions for the PIPS project",
   "scripts": {
     "build": "tsc",
-    "test": "jest"
+    "test": "jest  --passWithNoTests"
   },
   "keywords": [
     "pips"
