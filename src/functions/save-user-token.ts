@@ -1,11 +1,17 @@
 import generateToken from "./generate-token";
 import getUserFromDbWithEmail from "./get-user-from-db-with-email";
 import runPgQuery from "./run-pg-query";
-import { TokenDto } from "./../dtos";
 import { TokenType } from "./../types";
 import logStructuredMess from "./log-structured-mess";
 import getParsableReqBody from "./get-parsable-req-body";
 import { PACKAGE_NAME } from "../constants";
+
+interface TokenDto {
+  id?: number;
+  expired?: boolean;
+  token: string;
+  type: TokenType;
+}
 
 const saveUserToken = async (
   userEmail: string,

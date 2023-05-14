@@ -1,10 +1,6 @@
 import {
-  ActionType,
   BlogPostStatusType,
-  PendingUserModificationType,
-  ResourceType,
   SocialHandleType,
-  TokenType,
 } from "./types";
 
 /**
@@ -26,27 +22,6 @@ export type BlogPostMetaDto = {
   status: BlogPostStatusType;
   title: string;
 };
-
-export interface PendingUserModificationDto {
-  committed_at?: string;
-  created_at: string;
-  id: number;
-  field: PendingUserModificationType;
-  value: string;
-}
-
-export interface PermissionDto {
-  action: ActionType;
-  id?: number;
-  resource: ResourceType;
-}
-
-export interface TokenDto {
-  id?: number;
-  expired?: boolean;
-  token: string;
-  type: TokenType;
-}
 
 export interface UserDto {
   id?: number;

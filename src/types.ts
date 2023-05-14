@@ -1,30 +1,9 @@
 // supported actions on resources
-export type ActionType =
-  | "Create"
-  | "Delete"
-  | "Delete_Own"
-  | "Read"
-  | "Read_Own"
-  | "Update"
-  | "Update_Own";
-export type ResourceType =
-  | "Blog_Posts"
-  | "Blog_Posts_Drafts"
-  | "Images"
-  | "Users_Permissions";
-
-export type APIResponseType = {
-  msg: string;
-  data: {}[] | {} | null;
-};
-
 export type BlogPostStatusType = "published" | "draft";
 
 export type BuildStateType = "ERROR" | "READY" | "MASKED";
 
 export type LogLevelType = "DEBUG" | "INFO" | "WARNING" | "ERROR" | "CRITICAL";
-
-export type PendingUserModificationType = "email" | "password";
 
 export type PgClientConfigType = {
   database: string;

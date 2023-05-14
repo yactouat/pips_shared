@@ -1,6 +1,7 @@
 import axios from "axios";
-import { MASKED } from "../constants";
 import { VercelDeploymentType } from "../types";
+
+const MASKED = "MASKED";
 
 const getVercelBuilds = async (
   maskDeploymentsUid: boolean = false
