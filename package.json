@@ -1,6 +1,6 @@
 {
   "name": "pips_shared",
-  "version": "8.0.0",
+  "version": "8.1.0",
   "description": "the TS npm package that centralizes all the shared types, DTOs, and functions for the PIPS project",
   "scripts": {
     "build": "tsc",

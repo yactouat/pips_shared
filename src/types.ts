@@ -29,6 +29,12 @@ export type TokenType =
   | "User_Modification"
   | "User_Verification";
 
+export type UserProfileModificationType =
+  | "authtoken"
+  | "deletetoken"
+  | "modifytoken"
+  | "veriftoken";
+
 export type VercelDeploymentType = {
   aliasAssigned: number | null;
   aliasError: string | null;
